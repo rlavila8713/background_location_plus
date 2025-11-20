@@ -35,10 +35,10 @@ dependencies:
 
 ```
 
-## Run
+##  Run
     flutter pub get
 
-🔧 iOS Setup (Required)
+### 🔧 iOS Setup (Required)
 
 1. Add permissions to Info.plist
 
@@ -51,9 +51,9 @@ dependencies:
     <string>Your location is used even when the app is closed.</string>
 ```
 2. Enable Background Modes
-    Open Xcode → Runner → Signing & Capabilities → + Capability:
+    ```Open Xcode → Runner → Signing & Capabilities → + Capability:
     Location updates
-    Background processing
+    Background processing```
 
 3. Add required BGTaskScheduler key
 ```
@@ -63,7 +63,7 @@ dependencies:
     </array>
 ```
 
-🔧 Android Setup (Required)
+### 🔧 Android Setup (Required)
 Add these permissions inside android/app/src/main/AndroidManifest.xml:
 ```
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -71,20 +71,20 @@ Add these permissions inside android/app/src/main/AndroidManifest.xml:
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 ```
 
-🧪 Example App
+### 🧪 Example App
     Check the /example folder for full working code.
 
-📝 Roadmap
+## 📝 Roadmap
     Geofence support
     Activity recognition
     Custom update intervals
     Android foreground notification customization
 
-❤️ Contributing
+## ❤️ Contributing
     Pull requests are welcome.
     Please open an issue if you find a bug or require a feature.
 
-📄 License
+## 📄 License
     MIT License — see LICENSE file.
 
 
