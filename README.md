@@ -59,26 +59,20 @@ dependencies:
     Background processing
 ```
 
-3. Add required BGTaskScheduler key
-
-```xml
-    <key>BGTaskSchedulerPermittedIdentifiers</key>
-    <array>
-    <string>com.yourcompany.yourapp.location.refresh</string>
-    </array>
-```
 
 ### 🔧 Android Setup (Required)
 Add these permissions inside android/app/src/main/AndroidManifest.xml:
 ```xml
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
 ```xml
 <service
-    android:name="com.workifyplus.background_location_plus.LocationService"
+    android:name="com.your_package.background_location_plus.LocationService"
     android:foregroundServiceType="location" />
 ```
 
