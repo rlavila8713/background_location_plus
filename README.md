@@ -32,17 +32,18 @@ Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
   background_location_plus: ^0.0.1
-
 ```
 
 ##  Run
+```sh
     flutter pub get
+```
 
 ### 🔧 iOS Setup (Required)
 
 1. Add permissions to Info.plist
 
-```
+```xml
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Your location is used to track your trips.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -51,12 +52,16 @@ dependencies:
     <string>Your location is used even when the app is closed.</string>
 ```
 2. Enable Background Modes
-    ```Open Xcode → Runner → Signing & Capabilities → + Capability:
+
+```dif
+    Open Xcode → Runner → Signing & Capabilities → + Capability:
     Location updates
-    Background processing```
+    Background processing
+```
 
 3. Add required BGTaskScheduler key
-```
+
+```xml
     <key>BGTaskSchedulerPermittedIdentifiers</key>
     <array>
     <string>com.yourcompany.yourapp.location.refresh</string>
@@ -65,10 +70,16 @@ dependencies:
 
 ### 🔧 Android Setup (Required)
 Add these permissions inside android/app/src/main/AndroidManifest.xml:
-```
+```xml
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+```
+
+```xml
+<service
+    android:name="com.workifyplus.background_location_plus.LocationService"
+    android:foregroundServiceType="location" />
 ```
 
 ### 🧪 Example App
