@@ -1,15 +1,90 @@
 # background_location_plus
 
-A new Flutter plugin project.
+![Pub Version](https://img.shields.io/pub/v/background_location_plus?color=blue)
+![Likes](https://img.shields.io/pub/likes/background_location_plus)
+![Popularity](https://img.shields.io/pub/popularity/background_location_plus)
+![Points](https://img.shields.io/pub/points/background_location_plus)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## Getting Started
+A Flutter plugin for reliable **foreground and background location tracking** on iOS and Android.  
+Designed for apps that require precise, continuous geolocation such as delivery, workforce tracking, attendance, trip logging, field services, and more.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/to/develop-plugins),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ✨ Features
+
+- High-accuracy location updates  
+- Background location tracking (iOS & Android)  
+- Low battery consumption  
+- Stream-based API  
+- Fully customizable  
+- Production-ready  
+- Works with minimized, locked, or inactive apps  
+- Safe iOS background mode setup included  
+
+---
+
+## 📦 Installation
+
+
+Add to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  background_location_plus: ^0.0.1
+
+```
+
+## Run
+    flutter pub get
+
+🔧 iOS Setup (Required)
+
+1. Add permissions to Info.plist
+
+```
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is used to track your trips.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Your location is used even in background.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Your location is used even when the app is closed.</string>
+```
+2. Enable Background Modes
+    Open Xcode → Runner → Signing & Capabilities → + Capability:
+    Location updates
+    Background processing
+
+3. Add required BGTaskScheduler key
+```
+    <key>BGTaskSchedulerPermittedIdentifiers</key>
+    <array>
+    <string>com.yourcompany.yourapp.location.refresh</string>
+    </array>
+```
+
+🔧 Android Setup (Required)
+Add these permissions inside android/app/src/main/AndroidManifest.xml:
+```
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+```
+
+🧪 Example App
+    Check the /example folder for full working code.
+
+📝 Roadmap
+    Geofence support
+    Activity recognition
+    Custom update intervals
+    Android foreground notification customization
+
+❤️ Contributing
+    Pull requests are welcome.
+    Please open an issue if you find a bug or require a feature.
+
+📄 License
+    MIT License — see LICENSE file.
+
 

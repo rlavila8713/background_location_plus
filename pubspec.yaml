@@ -1,0 +1,32 @@
+name: background_location_plus
+description: "Background location tracking plugin (foreground service Android + CoreLocation iOS)."
+version: 0.0.1
+publish_to: "none"
+homepage: https://dart.dev/
+repository: https://github.com/rlavila8713/background_location_plus
+
+environment:
+  sdk: ^3.8.1
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+ 
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.workifyplus.background_location_plus
+        pluginClass: BackgroundLocationPlusPlugin
+      ios:
+        pluginClass: BackgroundLocationPlusPlugin
+
+   
