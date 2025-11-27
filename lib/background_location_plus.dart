@@ -1,5 +1,3 @@
-library background_location_plus;
-
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -22,7 +20,7 @@ class BackgroundLocationPlus {
   }) => _impl.configure(
     accuracy: accuracy,
     timeInterval: timeInterval,
-    distanceFilter: distanceFilter
+    distanceFilter: distanceFilter,
   );
 
   /// Start tracking (returns true if started)

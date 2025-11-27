@@ -1,6 +1,6 @@
 name: background_location_plus
 description: "Background location tracking plugin (foreground service Android + CoreLocation iOS)."
-version: 0.0.1
+version: 0.0.2
 # publish_to: "none"
 homepage: https://dart.dev/
 repository: https://github.com/rlavila8713/background_location_plus
